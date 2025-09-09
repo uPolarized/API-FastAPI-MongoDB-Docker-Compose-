@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standart]
+motor
+pydantic[email]
+pymongo
+python-dotenv

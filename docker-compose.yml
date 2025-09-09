@@ -1,22 +1,22 @@
 version: '3.8'
 
 services:
-  # Serviço da API FastAPI
+  
   api:
     build: .
     ports:
       - "8000:8000"
-    # MUDANÇA AQUI: o volume agora aponta para /app
+    
     volumes:
       - ./app:/app
-    # MUDANÇA AQUI: o comando não precisa mais do "app."
+    
     command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
     depends_on:
       - mongo
     environment:
       - MONGO_URL=mongodb://mongo:27017
 
-  # Serviço do Banco de Dados MongoDB
+  
   mongo:
     image: mongo:latest
     ports:

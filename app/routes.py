@@ -2,12 +2,12 @@
 from fastapi import APIRouter, Body, Depends, HTTPException, Query, status
 from motor.motor_asyncio import AsyncIOMotorDatabase
 from typing import List
-from bson import ObjectId # Importar ObjectId para validação
+from bson import ObjectId 
 
 import crud
 from database import get_database
 from schemas import UserCreate, UserUpdate, UserResponse, PaginatedUserResponse
-# Removido o import de PyObjectId, pois não será usado como parâmetro de rota
+
 
 router = APIRouter()
 
@@ -51,12 +51,12 @@ async def list_users(
     response_model=UserResponse,
     summary="Get a single user by ID"
 )
-# MUDANÇA AQUI: de 'id: PyObjectId' para 'id: str'
+
 async def get_single_user(
     id: str,
     db: AsyncIOMotorDatabase = Depends(get_database)
 ):
-    # Adicionamos uma validação explícita para o formato do ID
+    
     if not ObjectId.is_valid(id):
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=f"Invalid ObjectId format: {id}")
 
@@ -70,7 +70,7 @@ async def get_single_user(
     response_model=UserResponse,
     summary="Update an existing user"
 )
-# MUDANÇA AQUI: de 'id: PyObjectId' para 'id: str'
+
 async def update_existing_user(
     id: str,
     user_update: UserUpdate = Body(...),
@@ -91,7 +91,7 @@ async def update_existing_user(
     status_code=status.HTTP_204_NO_CONTENT,
     summary="Delete a user"
 )
-# MUDANÇA AQUI: de 'id: PyObjectId' para 'id: str'
+
 async def delete_existing_user(
     id: str,
     db: AsyncIOMotorDatabase = Depends(get_database)

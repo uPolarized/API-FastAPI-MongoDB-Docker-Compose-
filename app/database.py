@@ -22,14 +22,14 @@ async def connect_to_mongo():
     try:
         print("Connecting to MongoDB...")
         db_handler.client = motor.motor_asyncio.AsyncIOMotorClient(mongo_url)
-        # O nome do banco de dados será 'userdb'
+        
         db_handler.db = db_handler.client.userdb
-        # Garante que o índice único de e-mail exista na coleção de usuários
+        
         await db_handler.db.users.create_index("email", unique=True)
         print("Successfully connected to MongoDB and created unique index.")
     except ConnectionFailure as e:
         print(f"Could not connect to MongoDB: {e}")
-        # Em um app real, você poderia tentar reconectar ou sair do programa
+        
         raise
 
 async def close_mongo_connection():

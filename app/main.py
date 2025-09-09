@@ -7,10 +7,10 @@ from routes import router as user_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Antes da aplicação iniciar
+    
     await connect_to_mongo()
     yield
-    # Após a aplicação finalizar
+    
     await close_mongo_connection()
 
 app = FastAPI(
@@ -20,7 +20,7 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Inclui as rotas de usuários com um prefixo e uma tag para organização no Swagger
+
 app.include_router(user_router, prefix="/users", tags=["Users"])
 
 @app.get("/", tags=["Root"])

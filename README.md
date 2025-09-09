@@ -2,7 +2,7 @@
 
 Projeto desenvolvido para praticar a criação de uma API RESTful completa, utilizando um ambiente totalmente containerizado com Docker Compose.
 
-## 🚀 Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 
 * **Python 3.11**
 * **FastAPI** - Para a construção da API.
@@ -11,7 +11,7 @@ Projeto desenvolvido para praticar a criação de uma API RESTful completa, util
 * **Pydantic V2** - Para validação e serialização de dados.
 * **Docker & Docker Compose** - Para a containerização da aplicação e do banco de dados.
 
-## ✨ Funcionalidades
+##  Funcionalidades
 
 * CRUD completo de usuários (Criar, Ler, Atualizar, Deletar).
 * Validação de dados na entrada (e-mail, idade, nome).
@@ -41,11 +41,11 @@ Projeto desenvolvido para praticar a criação de uma API RESTful completa, util
 
 4.  **Pronto!** A API estará disponível em `http://localhost:8000`.
 
-## 📚 Documentação da API
+##  Documentação da API
 
 Após executar o projeto, a documentação interativa gerada pelo Swagger UI pode ser acessada em:
 
-➡️ **[http://localhost:8000/docs](http://localhost:8000/docs)**
+➡ **[http://localhost:8000/docs](http://localhost:8000/docs)**
 
 Lá, é possível visualizar e testar todos os endpoints disponíveis.
 

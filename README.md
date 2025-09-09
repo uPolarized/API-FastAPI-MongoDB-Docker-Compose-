@@ -28,7 +28,27 @@ Após executar o projeto, a documentação interativa gerada pelo Swagger UI pod
 ➡ **[http://localhost:8000/docs](http://localhost:8000/docs)**
 
 Lá, é possível visualizar e testar todos os endpoints disponíveis.
+## 📖 Exemplos de Uso da API
 
+Abaixo estão exemplos de como interagir com a API usando `curl`. Estes comandos podem ser executados no terminal (como Git Bash) ou adaptados para ferramentas como Insomnia/Postman.
+
+*(Nota: O `id` do usuário será diferente a cada vez que for criado.)*
+
+---
+
+### 1. Criar um Novo Usuário
+
+**Requisição (`POST /users/`):**
+```bash
+curl -X 'POST' \
+  'http://localhost:8000/users/' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "name": "Maria Silva",
+  "email": "maria.silva@example.com",
+  "age": 30,
+  "is_active": true
+}'
 ### Endpoints Principais
 
 * `POST /users/` - Cria um novo usuário.
